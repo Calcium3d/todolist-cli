@@ -16,10 +16,12 @@ while True:
     if enter == "add":
         a = input("Enter the todo: ")
         todos.append(a)
+        pickle.dump(todos, open("names.dat", "wb"))
 
     if enter == "remove":
         b = int(input("Enter the no of the todo: "))
         todos.pop(b - 1)
+        pickle.dump(todos, open("names.dat", "wb"))
 
     if enter == "exit":
         print("Stopping program")
