@@ -3,16 +3,15 @@ todos = pickle.load(open("names.dat", "rb"))
 
 print(
     "What do you want to do? \n \n For seeing lists - display \n For adding todos - add \n for removing todos - remove \n to exit program - exit")
-x = 1
+
 while True:
     enter = input("Enter choice: ")
     print("\n")
+
     if enter == "display":
         for todo in todos:
-            print(str(x) + ". " + todo)
-            x += 1
-        x = 1
-
+            print(str(todos.index(todo) + 1) + ". " + todo)
+            
     if enter == "add":
         a = input("Enter the todo: ")
         todos.append(a)
